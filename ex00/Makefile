@@ -1,7 +1,7 @@
 CXX=c++
 CPPFLAGS=-Wall -Werror -Wextra -std=c++98 -Wshadow-all
 RM=rm -rf
-SRC=Animal.cpp main.cpp
+SRC=Cat.cpp Dog.cpp Animal.cpp main.cpp
 OBJS=$(SRC:%.cpp=%.o)
 NAME=Polymorphism
 
