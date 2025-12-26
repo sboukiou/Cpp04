@@ -1,6 +1,7 @@
 #include "./Animal.hpp"
 #include "./Cat.hpp"
 #include "./Dog.hpp"
+#include "./WrongCat.hpp"
 #include <iostream>
 
 void	testAnimalClass(void) {
@@ -60,6 +61,24 @@ void	testDogClass(void) {
 	std::cout << "----------------\n\n";
 }
 
+void	testWrongAnimalCat() {
+	std::cout << "----------------\n";
+	std::cout <<  "Testing the WrongCat Class\n";
+	std::cout << "----------------\n";
+	WrongAnimal *unknown = new WrongCat;
+	WrongAnimal *Dinosaur = new WrongCat("T-rex");
+	WrongAnimal *ChildDino = new WrongCat(*Dinosaur);
+
+	ChildDino->setType("Mini-T-Rex");
+
+	unknown->makeSound();
+	Dinosaur->makeSound();
+	ChildDino->makeSound();
+	delete unknown;
+	delete Dinosaur;
+	delete ChildDino;
+	std::cout << "----------------\n\n";
+}
 
 int	main(void) {
 	testAnimalClass();
@@ -67,6 +86,8 @@ int	main(void) {
 	testCatClass();
 	std::cout << "----------------\n\n";
 	testDogClass();
+	std::cout << "----------------\n\n";
+	testWrongAnimalCat();
 	std::cout << "----------------\n\n";
 
 
