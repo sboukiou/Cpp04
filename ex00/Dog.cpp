@@ -45,7 +45,7 @@ void	Dog::operator=(const Dog &param) {
 	}
 }
 
-void	Dog::makeSound(void) {
+void	Dog::makeSound(void) const {
 	std::cout << "[INFO]:(Dog Make Sound){Howww !}\n";
 	if (std::cout.fail()) {
 		std::cerr << "[ERR]: (Failed to write to stdout)\n";

@@ -45,7 +45,7 @@ void	Cat::operator=(const Cat &param) {
 	}
 }
 
-void	Cat::makeSound(void) {
+void	Cat::makeSound(void) const {
 	std::cout << "[INFO]:(Cat Make Sound){Meowwwwww !}\n";
 	if (std::cout.fail()) {
 		std::cerr << "[ERR]: (Failed to write to stdout)\n";

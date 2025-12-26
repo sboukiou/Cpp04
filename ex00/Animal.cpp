@@ -52,7 +52,7 @@ void	Animal::setType(const std::string &param) {
 	type = param;
 }
 
-void	Animal::makeSound(void) {
+void	Animal::makeSound(void) const {
 	std::cout << "[INFO]:(Make Sound){Default Animal wont make any}\n";
 	if (std::cout.fail()) {
 		std::cerr << "[ERR]: (Failed to write to stdout)\n";
