@@ -3,6 +3,13 @@
 
 # include <string>
 
+/**
+ * Implementation of the Animal class
+ *
+ * which serves as a base class for all the other
+ * Animals/specific Classes (Cat, Dog, Duck ....)
+ */
+
 class Animal {
 	private:
 

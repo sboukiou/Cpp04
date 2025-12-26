@@ -1,6 +1,14 @@
 #ifndef CAT_HPP
 # define CAT_HPP
 
+/**
+ * Implementation of the Cat class
+ *
+ * Derived from the Animal Class
+ * with same properties and overrides
+ * the makeSound() virtual method
+ */
+
 #include "Animal.hpp"
 
 class Cat: public Animal {
