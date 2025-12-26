@@ -7,18 +7,18 @@ void	testAnimalClass(void) {
 	std::cout << "----------------\n";
 	std::cout <<  "Testing the Animal Class\n";
 	std::cout << "----------------\n";
-	Animal *unknown = new Animal;
-	Animal *Dinosaur = new Animal("T-rex");
-	Animal *ChildDino = new Animal(*Dinosaur);
+	Animal *regularAnimal = new Animal;
+	Animal *pseudoAnimal = new Animal("T-rex");
+	Animal *HolyAnimal = new Animal(*pseudoAnimal);
 
-	ChildDino->setType("Mini-T-Rex");
+	pseudoAnimal->setType("Mini-T-Rex");
 
-	unknown->makeSound();
-	Dinosaur->makeSound();
-	ChildDino->makeSound();
-	delete unknown;
-	delete Dinosaur;
-	delete ChildDino;
+	regularAnimal->makeSound();
+	HolyAnimal->makeSound();
+	pseudoAnimal->makeSound();
+	delete regularAnimal;
+	delete HolyAnimal;
+	delete pseudoAnimal;
 	std::cout << "----------------\n\n";
 }
 
@@ -62,13 +62,16 @@ void	testDogClass(void) {
 
 
 int	main(void) {
-	/*testAnimalClass();*/
-	/*std::cout << "----------------\n\n";*/
-	/*testCatClass();*/
-	/*std::cout << "----------------\n\n";*/
-	/*testDogClass();*/
-	/*std::cout << "----------------\n\n";*/
+	testAnimalClass();
+	std::cout << "----------------\n\n";
+	testCatClass();
+	std::cout << "----------------\n\n";
+	testDogClass();
+	std::cout << "----------------\n\n";
 
+
+	std::cout << "----------------\n\n";
+	std::cout << "Subject presented tests\n\n";
 		const Animal* meta = new Animal();
 		const Animal* j = new Dog();
 		const Animal* i = new Cat();
