@@ -8,8 +8,8 @@
 ## Core Concepts:
 ### Polymorphism:
 **:book: [Polymorphism In General](https://www.geeksforgeeks.org/cpp/cpp-polymorphism)**\
+**:book: [Types of Polymorphism(Must READ !)](https://catonmat.net/cpp-polymorphism)**\
 **:book: [More about dynamic Polymorphism](https://www.mygreatlearning.com/blog/polymorphism-in-cpp/)**
-**:book: [Types of Polymorphism(Must READ !)](https://catonmat.net/cpp-polymorphism)**
 
 \
     ***Or in simple terms:***
@@ -22,6 +22,7 @@
 
 **:book: [Usage of virtual functions](https://cplusplus.com/doc/tutorial/polymorphism/)**\
 **:book: [More about Vf](https://en.cppreference.com/w/cpp/language/virtual.html)**\
+**:book: [Child Copy Constructor !](https://softwareengineering.stackexchange.com/questions/337561/c-derived-class-copy-constructor)**\
 ***Like in this situation , which makeSound() version is called ?***
 
 ![Code](./assets/Code.png)
