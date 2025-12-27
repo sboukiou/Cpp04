@@ -4,6 +4,7 @@
 
 Cat::Cat() {
 	type = "(Cat)";
+	brain = new Brain();
 	std::cout << "[INFO]:(Default Construction){Cat}\n";
 	if (std::cout.fail()) {
 		std::cerr << "[ERR]: (Failed to write to stdout)\n";
@@ -12,6 +13,7 @@ Cat::Cat() {
 }
 Cat::Cat(const std::string &param) {
 	type = param;
+	brain = new Brain();
 	std::cout << "[INFO]:(Parameterized Construction){Cat}\n";
 	if (std::cout.fail()) {
 		std::cerr << "[ERR]: (Failed to write to stdout)\n";
@@ -21,6 +23,7 @@ Cat::Cat(const std::string &param) {
 
 Cat::Cat(const Animal &param) {
 	type = param.getType();
+	brain = new Brain();
 	std::cout << "[INFO]:(Copy Construction){Cat}\n";
 	if (std::cout.fail()) {
 		std::cerr << "[ERR]: (Failed to write to stdout)\n";
@@ -29,6 +32,7 @@ Cat::Cat(const Animal &param) {
 }
 
 Cat::~Cat(void) {
+	delete brain;
 	std::cout << "[INFO]:(Destruction){Cat}\n";
 	if (std::cout.fail()) {
 		std::cerr << "[ERR]: (Failed to write to stdout)\n";
@@ -51,4 +55,12 @@ void	Cat::makeSound(void) const {
 		std::cerr << "[ERR]: (Failed to write to stdout)\n";
 		exit(0);
 	}
+}
+
+Brain	*Cat::getBrain(void) const {
+	return (brain);
+}
+
+void	Cat::setBrain(Brain *param) {
+	brain = param;
 }

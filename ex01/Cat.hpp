@@ -1,6 +1,9 @@
 #ifndef CAT_HPP
 # define CAT_HPP
 
+#include "Brain.hpp"
+#include "Animal.hpp"
+
 /**
  * Implementation of the Cat class
  *
@@ -9,9 +12,9 @@
  * the makeSound() virtual method
  */
 
-#include "Animal.hpp"
-
 class Cat: public Animal {
+	private:
+		Brain *brain;
 	public:
 		Cat();
 		Cat(const std::string &param);
@@ -19,6 +22,8 @@ class Cat: public Animal {
 		~Cat();
 		void				operator=(const Cat &param);
 		void				makeSound(void) const;
+		Brain				*getBrain(void) const ;
+		void				setBrain(Brain *param);
 };
 
 #endif

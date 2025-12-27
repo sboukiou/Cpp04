@@ -5,6 +5,7 @@
 
 Brain::Brain(void) {
 	ideas = new std::string[IDEAS_COUNT](); // Added parentheses to initialize memory
+	size = 0;
 	if (ideas == NULL) {
 		std::cerr << "[ERR]: Failed to allocate the ideas!\n";
 		exit(FAIL);
@@ -16,14 +17,21 @@ Brain::Brain(void) {
 	}
 }
 
-Brain::Brain(std::string *param) {
-	if (ideas != NULL)
-		delete ideas;
+Brain::Brain(std::string *param, size_t i) {
 	if (param == NULL) {
 		std::cerr << "[ERR]: ideas provided are null!\n";
 		return ;
 	}
-	ideas = param;
+	ideas = new std::string[IDEAS_COUNT](); // Added parentheses to initialize memory
+	if (ideas == NULL) {
+		std::cerr << "[ERR]: Failed to allocate the ideas!\n";
+		exit(FAIL);
+	}
+	size = i;
+	for (size_t j = 0; j < size; j += 1) {
+			ideas[j] = param[j];
+			j += 1;
+	}
 	std::cout << "[INFO]:(Parameterized Construction){Brain}\n";
 	if (std::cout.fail()) {
 		std::cerr << "[ERR]: (Failed to write to stdout)\n";
@@ -32,13 +40,17 @@ Brain::Brain(std::string *param) {
 }
 
 Brain::Brain(const Brain &other) {
-	if (other.getIdeas() != NULL)
-		delete ideas;
+	std::string	*Copy;
 	if (other.getIdeas() == NULL) {
-		std::cerr << "[ERR]: ideas provided are null!\n";
-		return ;
+		std::cerr << "[WARN]: ideas in the provided object are null!\n";
 	}
-	ideas = other.getIdeas();
+	ideas = new std::string[IDEAS_COUNT]();
+	Copy = other.getIdeas();
+	size = other.getSize();
+	for (size_t i = 0; i < size; i += 1) {
+			ideas[i] = Copy[i];
+			i += 1;
+	}
 	std::cout << "[INFO]:(Copy Construction){Brain}\n";
 	if (std::cout.fail()) {
 		std::cerr << "[ERR]: (Failed to write to stdout)\n";
@@ -48,7 +60,7 @@ Brain::Brain(const Brain &other) {
 
 Brain::~Brain(void) {
 	if (ideas != NULL)
-		delete ideas;
+		delete [] ideas;
 	std::cout << "[INFO]:(Destruction){Animal}\n";
 	if (std::cout.fail()) {
 		std::cerr << "[ERR]: (Failed to write to stdout)\n";
@@ -77,4 +89,11 @@ std::string	*Brain::getIdeas(void) const {
 
 void	Brain::setIdeas(std::string *param) {
 	ideas = param;
+}
+
+size_t	Brain::getSize(void) const {
+	return (size);
+}
+void	Brain::setSize(size_t i) {
+	size = i;
 }
