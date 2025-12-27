@@ -44,3 +44,18 @@
 
 ```
 ![Copying](https://media.geeksforgeeks.org/wp-content/uploads/20240715185835/deep-copy-in-cpp.webp)
+
+
+### Abstraction:
+**:book: [What is an abstract Class ?](https://en.cppreference.com/w/cpp/language/abstract_class.html)**\
+**:book: [Pure Virtual Functions and ACs](https://www.geeksforgeeks.org/cpp/pure-virtual-functions-and-abstract-classes/)**\
+**:book: [Abstarct Class Constructors?!](https://stackoverflow.com/questions/19808667/c-abstract-class-constructor-yes-or-no)**
+**:book: [More !](https://www.ibm.com/docs/en/i/7.5.0?topic=only-abstract-classes-c)**\
+
+\
+    ***In simple terms:***
+```
+    * Abstract Classes Have a pure virtual non-class-implemented method
+    * And Can't be initialized, serves as a base Class
+
+```
