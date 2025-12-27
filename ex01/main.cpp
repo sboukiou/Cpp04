@@ -1,7 +1,7 @@
 #include "./Animal.hpp"
 #include "./Cat.hpp"
 #include "./Dog.hpp"
-#include "./WrongCat.hpp"
+#include "./Brain.hpp"
 #include <iostream>
 
 void	testAnimalClass(void) {
@@ -61,46 +61,61 @@ void	testDogClass(void) {
 	std::cout << "----------------\n\n";
 }
 
-void	testWrongAnimalCat() {
+void	testBrain() {
 	std::cout << "----------------\n";
-	std::cout <<  "Testing the WrongCat Class\n";
+	std::cout <<  "Testing the Brain Class\n";
 	std::cout << "----------------\n";
-	WrongAnimal *unknown = new WrongCat;
-	WrongAnimal *Dinosaur = new WrongCat("T-rex");
-	WrongAnimal *ChildDino = new WrongCat(*Dinosaur);
+	std::string staticIdeas = "No idea actually";
+	Brain *Brain00 = new Brain();
+	Brain *Brain01 = new Brain(&staticIdeas, 1);
+	Brain *Brain02 = new Brain(*Brain00);
 
-	ChildDino->setType("Mini-T-Rex");
-
-	unknown->makeSound();
-	Dinosaur->makeSound();
-	ChildDino->makeSound();
-	delete unknown;
-	delete Dinosaur;
-	delete ChildDino;
+	std::cout << "\n----Destroying Brains----\n";
+	delete Brain00;
+	delete Brain01;
+	delete Brain02;
 	std::cout << "----------------\n\n";
 }
 
+void	testMixed(void) {
+	std::cout << "-------- TEST MIXED -----\n";
+	Dog Basic = Dog();
+	{
+		Dog tmp = Basic;
+	}
+	/*std::cout << Basic.getBrain()->getSize() << std::endl;*/
+
+}
+
+# define ZOO_SIZE 5
+
+void	requiredTest() {
+	Animal **Zoo = new Animal*[ZOO_SIZE];
+	for (size_t i = 0; i < ZOO_SIZE; i += 1) {
+		if (i % 2)
+			Zoo[i] = new Cat();
+		else
+			Zoo[i] = new Dog();
+		Zoo[i]->makeSound();
+	}
+	for (size_t i = 0; i < ZOO_SIZE; i += 1)
+		delete Zoo[i];
+	delete [] Zoo;
+}
+
 int	main(void) {
-	testAnimalClass();
+	/*testAnimalClass();*/
+	/*std::cout << "----------------\n\n";*/
+	/*testCatClass();*/
 	std::cout << "----------------\n\n";
-	testCatClass();
+	/*testDogClass();*/
 	std::cout << "----------------\n\n";
-	testDogClass();
-	std::cout << "----------------\n\n";
-	testWrongAnimalCat();
-	std::cout << "----------------\n\n";
+	/*requiredTest();*/
+	testMixed();
 
 
+	/*testBrain();*/
 	std::cout << "----------------\n\n";
-	std::cout << "Subject presented tests\n\n";
-		const Animal* meta = new Animal();
-		const Animal* j = new Dog();
-		const Animal* i = new Cat();
-		std::cout << j->getType() << " " << std::endl;
-		std::cout << i->getType() << " " << std::endl;
-		i->makeSound(); //will output the cat sound!
-		j->makeSound();
-		meta->makeSound();
 	
 	return (0);
 }

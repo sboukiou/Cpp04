@@ -3,7 +3,7 @@ CPPFLAGS=-Wall -Werror -Wextra -std=c++98 -Wshadow-all
 RM=rm -rf
 SRC=Cat.cpp Dog.cpp Animal.cpp main.cpp Brain.cpp 
 OBJS=$(SRC:%.cpp=%.o)
-NAME=Polymorphism
+NAME=Braining
 
 all: $(NAME)
 
