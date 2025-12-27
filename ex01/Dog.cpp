@@ -21,8 +21,9 @@ Dog::Dog(const std::string &param) {
 	}
 }
 
-Dog::Dog(const Animal &param) {
+Dog::Dog(const Dog &param) {
 	type = param.getType();
+	brain = new Brain(*param.getBrain());
 	std::cout << "[INFO::(Copy Construction){Dog}\n";
 	if (std::cout.fail()) {
 		std::cerr << "[ERR]: (Failed to write to stdout)\n";

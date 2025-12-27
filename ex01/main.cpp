@@ -28,17 +28,17 @@ void	testCatClass(void) {
 	std::cout <<  "Testing the Cat Class\n";
 	std::cout << "----------------\n";
 	Animal *unknown = new Cat;
-	Animal *Dinosaur = new Cat("T-rex");
-	Animal *ChildDino = new Cat(*Dinosaur);
+	Animal *Bob = new Cat("T-rex");
+	Cat *lilBob = new Cat("Bob");
 
-	ChildDino->setType("Mini-T-Rex");
+	lilBob->setType("Mini-T-Rex");
 
 	unknown->makeSound();
-	Dinosaur->makeSound();
-	ChildDino->makeSound();
+	Bob->makeSound();
+	lilBob->makeSound();
 	delete unknown;
-	delete Dinosaur;
-	delete ChildDino;
+	delete Bob;
+	delete lilBob;
 	std::cout << "----------------\n\n";
 }
 
@@ -47,17 +47,17 @@ void	testDogClass(void) {
 	std::cout <<  "Testing the Dog Class\n";
 	std::cout << "----------------\n";
 	Animal *unknown = new Dog;
-	Animal *Dinosaur = new Dog("T-rex");
-	Animal *ChildDino = new Dog(*Dinosaur);
+	Animal *Bob = new Dog("T-rex");
+	Dog *lilBob = new Dog();
 
-	ChildDino->setType("Mini-T-Rex");
+	lilBob->setType("Mini-T-Rex");
 
 	unknown->makeSound();
-	Dinosaur->makeSound();
-	ChildDino->makeSound();
+	Bob->makeSound();
+	lilBob->makeSound();
 	delete unknown;
-	delete Dinosaur;
-	delete ChildDino;
+	delete Bob;
+	delete lilBob;
 	std::cout << "----------------\n\n";
 }
 
@@ -83,7 +83,7 @@ void	testMixed(void) {
 	{
 		Dog tmp = Basic;
 	}
-	/*std::cout << Basic.getBrain()->getSize() << std::endl;*/
+	std::cout << Basic.getBrain()->getSize() << std::endl;
 
 }
 
@@ -104,17 +104,17 @@ void	requiredTest() {
 }
 
 int	main(void) {
-	/*testAnimalClass();*/
-	/*std::cout << "----------------\n\n";*/
-	/*testCatClass();*/
+	testAnimalClass();
 	std::cout << "----------------\n\n";
-	/*testDogClass();*/
+	testCatClass();
 	std::cout << "----------------\n\n";
-	/*requiredTest();*/
+	testDogClass();
+	std::cout << "----------------\n\n";
+	requiredTest();
 	testMixed();
 
 
-	/*testBrain();*/
+	testBrain();
 	std::cout << "----------------\n\n";
 	
 	return (0);

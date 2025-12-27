@@ -21,7 +21,7 @@ Cat::Cat(const std::string &param) {
 	}
 }
 
-Cat::Cat(const Animal &param) {
+Cat::Cat(const Cat &param) {
 	type = param.getType();
 	brain = new Brain();
 	std::cout << "[INFO]:(Copy Construction){Cat}\n";

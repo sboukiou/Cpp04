@@ -18,7 +18,7 @@ class Dog: public Animal {
 	public:
 		Dog();
 		Dog(const std::string &param);
-		Dog(const Animal &param);
+		Dog(const Dog &param);
 		~Dog();
 		void				operator=(const Dog &param);
 		void				makeSound(void) const;

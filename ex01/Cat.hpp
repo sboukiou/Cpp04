@@ -18,7 +18,7 @@ class Cat: public Animal {
 	public:
 		Cat();
 		Cat(const std::string &param);
-		Cat(const Animal &param);
+		Cat(const Cat &param);
 		~Cat();
 		void				operator=(const Cat &param);
 		void				makeSound(void) const;
