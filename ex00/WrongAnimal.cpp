@@ -37,6 +37,8 @@ WrongAnimal::~WrongAnimal(void) {
 }
 
 void	WrongAnimal::operator=(const WrongAnimal &param) {
+	if (&param == this)
+		return ;
 	type = param.getType();
 	std::cout << "[INFO]:( <=> Operator overloading){WrongAnimal}\n";
 	if (std::cout.fail()) {

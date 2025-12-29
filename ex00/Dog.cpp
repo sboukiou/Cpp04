@@ -37,6 +37,8 @@ Dog::~Dog(void) {
 }
 
 void	Dog::operator=(const Dog &param) {
+	if (&param == this)
+		return ;
 	type = param.getType();
 	std::cout << "[INFO]:( <=> Operator overloading){Dog}\n";
 	if (std::cout.fail()) {

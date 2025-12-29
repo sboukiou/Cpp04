@@ -69,6 +69,8 @@ Brain::~Brain(void) {
 }
 
 void	Brain::operator=(const Brain &other) {
+	if (&other == this)
+		return ;
 	if (other.getIdeas() != NULL)
 		delete ideas;
 	if (other.getIdeas() == NULL) {

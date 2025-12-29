@@ -25,7 +25,8 @@ MateriaSource::MateriaSource(const MateriaSource &other) {
 }
 
 void MateriaSource::operator=(const MateriaSource &other) {
-
+	if (&other == this)
+		return ;
 	for (int i = 0; i < 4; i += 1)
 		learningSlots[i] = other.learningSlots[i]->clone();
 	std::cout << "[INFO]:(Assignment opeartor){MateriaSource}\n";

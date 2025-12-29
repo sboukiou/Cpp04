@@ -31,6 +31,8 @@ AMateria::AMateria(const AMateria &other) {
 }
 
 void AMateria::operator=(const AMateria &other) {
+	if (&other == this)
+		return ;
 	type = other.getType();
 	std::cout << "[INFO]:(Assignment operator){AMateria}\n";
 	if (std::cout.fail()) {

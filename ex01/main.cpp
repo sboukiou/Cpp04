@@ -33,6 +33,10 @@ void	testCatClass(void) {
 
 	lilBob->setType("Mini-T-Rex");
 
+
+	std::cout << "Testing the Assigment operator----------------\n";
+	*Bob = *lilBob;
+	std::cout << "----------------\n";
 	unknown->makeSound();
 	Bob->makeSound();
 	lilBob->makeSound();

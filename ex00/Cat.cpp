@@ -37,6 +37,8 @@ Cat::~Cat(void) {
 }
 
 void	Cat::operator=(const Cat &param) {
+	if (&param == this)
+		return ;
 	type = param.getType();
 	std::cout << "[INFO]:( <=> Operator overloading){Cat}\n";
 	if (std::cout.fail()) {

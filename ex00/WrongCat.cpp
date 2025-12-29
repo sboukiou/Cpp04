@@ -37,6 +37,8 @@ WrongCat::~WrongCat(void) {
 }
 
 void	WrongCat::operator=(const WrongCat &param) {
+	if (&param == this)
+		return ;
 	type = param.getType();
 	std::cout << "[INFO]:( <=> Operator overloading){WrongCat}\n";
 	if (std::cout.fail()) {
